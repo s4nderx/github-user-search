@@ -1,10 +1,8 @@
-import Header from "./core/components/Header"
+import React from 'react';
+import Routes from './Routes';
 
-import './app.scss'
 const App = () => {
-    return (
-        <Header />
-    );
-}
+    return <Routes />;
+};
 
 export default App;
