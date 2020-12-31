@@ -1,0 +1,88 @@
+.user-result-content{
+    margin-right: 40px;
+    margin-bottom: 45px;
+    margin-left: 30px;
+    margin-top: 25px;
+    display: flex;
+}
+
+.pill {
+    width: 163px;
+    height: 22px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    p {
+        height: 20em;
+        right: 253px;
+        top: calc(50% - 20px/2);
+        font-size: 12px;
+        line-height: 167%;
+        display: flex;
+        align-items: center;
+        color: #595959;
+    }
+
+}
+
+.pills-group {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.followers {
+    width: 118px;
+}
+
+.following {
+    width: 105px;
+}
+
+.avatar-image {
+    width: 284px;
+    height: 280px;
+    margin-right: 45px;
+    margin-bottom: 15px;
+}
+
+.infos-container{
+    width: 750px;
+    height: 247px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 6px;
+    margin-top: 10px;
+    padding: 8px 15px 15px 15px;
+
+    h1 {
+        margin: 0 auto;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+        display: flex;
+        align-items: center;
+        color: #1890FF;
+    }
+}
+
+.infos-group{
+    display: flex;
+    width: 100%;
+}
+
+.attributes-column {
+    margin-top: 20px;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column
+}

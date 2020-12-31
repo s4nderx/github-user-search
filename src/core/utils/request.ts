@@ -7,7 +7,7 @@ type RequestParams = {
     params?: object;
 };
 
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://api.github.com/users';
 
 export const http_request = ({
     method = 'GET',

@@ -1,6 +1,8 @@
 import DefaultButton from 'core/components/DefaultButton';
 import '../../app.scss';
 import './styles.scss'
+import { Link } from 'react-router-dom';
+
 const Home = () => (
 
         <div className="home-content">
@@ -14,7 +16,9 @@ const Home = () => (
             <p>
                 Este design foi adaptado a partir de Ant Design System for Figma, de Mateusz Wierzbicki: antforfigma@gmail.com
             </p>
-            <DefaultButton text="começar"></DefaultButton>
+            <Link to="/search">
+                <DefaultButton text="começar"></DefaultButton>
+            </Link>
         </div>
 
 )
