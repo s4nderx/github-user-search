@@ -5,6 +5,7 @@ import { http_request } from 'core/utils/request';
 import { useState } from 'react';
 import './styles.scss'
 import UserResult from './components/UserResult';
+import UserResultLoader from './components/Loaders/UserResultLoader';
 
 type FormState = {
     username: string;
@@ -16,6 +17,7 @@ const Search = () => {
 
     const [formData, setFormData] = useState<FormState>({ username: '' });
     const [isLoading, setIsLoading] = useState(false);
+    const [hasSearched, setHasSearched] = useState(false);
 
 
     const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +28,8 @@ const Search = () => {
 
     const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setIsLoading(true)
+        setIsLoading(true);
+        setHasSearched(true);
         http_request({url: `/${formData.username}`}).then((response) =>{
             const data = response.data
 
@@ -38,11 +41,12 @@ const Search = () => {
                 created_at: data.created_at,
                 public_repos: data.public_repos,
                 followers: data.followers,
-                following: data.following
+                following: data.following,
+                avatar_url: data.avatar_url
             }
 
             setUserResponse(payload)
-            console.log(payload)
+
         }).finally(() => {
             setIsLoading(false)
         })   
@@ -67,9 +71,21 @@ const Search = () => {
 
                 </div>
             </div>
-            <div className="search-result-containter-content">
-                <UserResult />
-            </div>
+            {
+                hasSearched &&
+                <div className="search-result-containter-content">
+                    
+                    {
+                        isLoading ? (
+                            <UserResultLoader/>
+                        ) : (
+                        <UserResult user={userResponse}/>
+                        )
+                    }
+                    
+                </div>
+            }
+            
         </div>
     )
 }

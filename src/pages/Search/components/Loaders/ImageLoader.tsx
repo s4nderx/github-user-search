@@ -6,7 +6,7 @@ const ImageLoader = () => (
     speed={2}
     width={400}
     height={460}
-    viewBox="0 0 400 460"
+    viewBox="0 0 350 500"
     backgroundColor="#dedede"
     foregroundColor="#f5f5f5"
   >

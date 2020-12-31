@@ -7,4 +7,5 @@ export type UserResponse = {
     public_repos: number,
     followers: number,
     following: number,
+    avatar_url: string,
 }
